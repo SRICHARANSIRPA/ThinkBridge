@@ -15,9 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inventory.Application", "Se
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inventory.API", "Services\Inventory\Inventory.API\Inventory.API.csproj", "{BFDEB04F-63B9-44AB-BC46-360193515383}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Inventory.Test", "Inventory.Test", "{8F8D4A5B-8B4D-42B5-98A8-E97F3924D2AA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InventoryTest", "InventoryTest", "{8F8D4A5B-8B4D-42B5-98A8-E97F3924D2AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryAPI.Test", "Services\Inventory.Test\InventoryAPI.Test\InventoryAPI.Test.csproj", "{57B67248-5421-43C0-99D8-76F016F8226B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventoryAPI.Test", "Services\Inventory.Test\InventoryAPI.Test\InventoryAPI.Test.csproj", "{57B67248-5421-43C0-99D8-76F016F8226B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
