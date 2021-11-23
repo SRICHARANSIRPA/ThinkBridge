@@ -1,7 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <IsPackable>true</IsPackable>
+    <PackageId>Inventory</PackageId>
+    <Authors>Charan</Authors>
+    <Product>ShopBridge</Product>
+    <Description>e-commerce WebAPI which deals about Inventry</Description>
+    <PackageTags>Inventory</PackageTags>
+    <PackageReleaseNotes>e-commerce WebAPI which deals about Inventry</PackageReleaseNotes>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>

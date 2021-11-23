@@ -10,6 +10,10 @@ namespace Inventory.Application.Features.InventoryItems.Queries.GetInventoryItem
     public class GetInventoryItemsQuery : IRequest<List<InventoryItemsVM>>
     {
         public string Name { get; set; }
+        public GetInventoryItemsQuery()
+        {
+            Name = string.Empty;
+        }
 
         public GetInventoryItemsQuery(string name)
         {

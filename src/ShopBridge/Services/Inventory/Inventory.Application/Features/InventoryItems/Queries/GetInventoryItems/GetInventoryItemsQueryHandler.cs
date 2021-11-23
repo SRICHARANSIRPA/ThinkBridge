@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Inventory.Application.Contracts.Persistance;
+using Inventory.Domain.Entities;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -23,7 +24,11 @@ namespace Inventory.Application.Features.InventoryItems.Queries.GetInventoryItem
 
         public async Task<List<InventoryItemsVM>> Handle(GetInventoryItemsQuery request, CancellationToken cancellationToken)
         {
-            var itemList = await _itemRepository.GetItemByName(request.Name);
+            IEnumerable<InventoryItem> itemList; 
+            if(request.Name == string.Empty)
+                itemList = await _itemRepository.GetAllAsync();
+            else
+                itemList = await _itemRepository.GetItemByName(request.Name);
             return _mapper.Map<List<InventoryItemsVM>>(itemList);
         }
     }

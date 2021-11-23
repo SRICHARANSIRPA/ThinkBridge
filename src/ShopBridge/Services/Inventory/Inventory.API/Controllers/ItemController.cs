@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Http;
 using Inventory.Application.Features.InventoryItems.Commands.UpdateItem;
 using Inventory.Application.Features.InventoryItems.Commands.DeleteItem;
 using Inventory.Application.Features.InventoryItems.Commands.AddItem;
+using Inventory.Application.Services;
 
 namespace Inventory.API.Controllers
 {
@@ -17,11 +18,13 @@ namespace Inventory.API.Controllers
     [Route("api/v1/[controller]")]
     public class ItemController: Controller
     {
-        private readonly IMediator _mediator;
+        //private readonly IMediator _mediator;
+        private readonly IInventoryService _inventoryService;
 
-        public ItemController(IMediator mediator)
+        public ItemController(IInventoryService inventoryService)
         {
-            _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
+            //_mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
+            _inventoryService = inventoryService ?? throw new ArgumentNullException(nameof(inventoryService));
         }
 
         [HttpGet("{itemName}", Name = "GetItem")]
@@ -29,17 +32,24 @@ namespace Inventory.API.Controllers
         public async Task<ActionResult<IEnumerable<InventoryItemsVM>>> GetItemByName(string itemName)
         {
             var query = new GetInventoryItemsQuery(itemName);
-            var items = await _mediator.Send(query);
+            var items = await _inventoryService.GetItemByName(itemName);
             return Ok(items);
         }
 
+        [HttpGet]
+        [ProducesResponseType(typeof(IEnumerable<InventoryItemsVM>), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<IEnumerable<InventoryItemsVM>>> GetAllItems()
+        {
+            var items = await _inventoryService.GetAllItems();
+            return Ok(items);
+        }
 
 
         [HttpPost(Name = "AddItem")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         public async Task<ActionResult<int>> AddItem([FromBody] AddItemCommand command)
         {
-            var result = await _mediator.Send(command);
+            var result = await _inventoryService.AddItem(command);
             return Ok(result);
         }
 
@@ -50,7 +60,7 @@ namespace Inventory.API.Controllers
         [ProducesDefaultResponseType]
         public async Task<ActionResult> UpdateItem([FromBody] UpdateItemCommand command)
         {
-            await _mediator.Send(command);
+            var result = await _inventoryService.UpdateItem(command);
             return NoContent();
         }
 
@@ -61,8 +71,9 @@ namespace Inventory.API.Controllers
         [ProducesDefaultResponseType]
         public async Task<ActionResult> DeleteItem(int id)
         {
-            var command = new DeleteItemCommand() { Id = id };
-            await _mediator.Send(command);
+            var result = await _inventoryService.DeleteItem(id);
+
+            result.Equals(Unit.Value);
             return NoContent();
         }
     }

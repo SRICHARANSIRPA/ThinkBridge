@@ -16,8 +16,11 @@ namespace Inventory.InfraStructure
     {
         public static IServiceCollection AddInfraStructureServices(this IServiceCollection services, IConfiguration configuration)
         {
+            var db = configuration.GetConnectionString("LocalDBConnection");
             services.AddDbContext<InventoryContext>(options =>
-                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(configuration.GetConnectionString("LocalDBConnection"), builder=> {
+                    builder.EnableRetryOnFailure(5, TimeSpan.FromSeconds(10), null);
+                }));
 
             services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
             services.AddScoped<IItemRepository, ItemRepository>();

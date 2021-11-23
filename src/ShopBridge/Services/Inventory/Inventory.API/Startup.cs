@@ -1,3 +1,4 @@
+using Inventory.API.Extensions;
 using Inventory.Application;
 using Inventory.InfraStructure;
 using Microsoft.AspNetCore.Builder;
@@ -49,6 +50,8 @@ namespace Inventory.API
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Inventory.API v1"));
             }
+
+            app.ConfigureCustomExceptionMiddleware();
 
             app.UseRouting();
 

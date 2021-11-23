@@ -7,13 +7,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{A3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Inventory", "Inventory", "{3696A92E-928A-47FA-A7CA-F72D4C3FF6EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory.Domain", "Services\Inventory\Inventory.Domain\Inventory.Domain.csproj", "{BCDEDCC7-B4BE-4FC1-B6C1-3E0C2957C570}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inventory.Domain", "Services\Inventory\Inventory.Domain\Inventory.Domain.csproj", "{BCDEDCC7-B4BE-4FC1-B6C1-3E0C2957C570}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory.InfraStructure", "Services\Inventory\Inventory.InfraStructure\Inventory.InfraStructure.csproj", "{83B3BA4D-ADD9-4AFE-9568-AED802170B70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inventory.InfraStructure", "Services\Inventory\Inventory.InfraStructure\Inventory.InfraStructure.csproj", "{83B3BA4D-ADD9-4AFE-9568-AED802170B70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory.Application", "Services\Inventory\Inventory.Application\Inventory.Application.csproj", "{02C1FE10-C7F1-48FF-9695-BCA7387A146F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inventory.Application", "Services\Inventory\Inventory.Application\Inventory.Application.csproj", "{02C1FE10-C7F1-48FF-9695-BCA7387A146F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory.API", "Services\Inventory\Inventory.API\Inventory.API.csproj", "{BFDEB04F-63B9-44AB-BC46-360193515383}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inventory.API", "Services\Inventory\Inventory.API\Inventory.API.csproj", "{BFDEB04F-63B9-44AB-BC46-360193515383}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Inventory.Test", "Inventory.Test", "{8F8D4A5B-8B4D-42B5-98A8-E97F3924D2AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryAPI.Test", "Services\Inventory.Test\InventoryAPI.Test\InventoryAPI.Test.csproj", "{57B67248-5421-43C0-99D8-76F016F8226B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +41,10 @@ Global
 		{BFDEB04F-63B9-44AB-BC46-360193515383}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFDEB04F-63B9-44AB-BC46-360193515383}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFDEB04F-63B9-44AB-BC46-360193515383}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57B67248-5421-43C0-99D8-76F016F8226B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57B67248-5421-43C0-99D8-76F016F8226B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57B67248-5421-43C0-99D8-76F016F8226B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57B67248-5421-43C0-99D8-76F016F8226B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -47,6 +55,8 @@ Global
 		{83B3BA4D-ADD9-4AFE-9568-AED802170B70} = {3696A92E-928A-47FA-A7CA-F72D4C3FF6EE}
 		{02C1FE10-C7F1-48FF-9695-BCA7387A146F} = {3696A92E-928A-47FA-A7CA-F72D4C3FF6EE}
 		{BFDEB04F-63B9-44AB-BC46-360193515383} = {3696A92E-928A-47FA-A7CA-F72D4C3FF6EE}
+		{8F8D4A5B-8B4D-42B5-98A8-E97F3924D2AA} = {A3270607-8079-469B-A5FF-7555C6B36102}
+		{57B67248-5421-43C0-99D8-76F016F8226B} = {8F8D4A5B-8B4D-42B5-98A8-E97F3924D2AA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DAF17D28-B8C4-46F2-BED2-A9ED0B6D4079}

@@ -24,7 +24,14 @@ namespace Inventory.InfraStructure.Persistance
             return new List<InventoryItem>
             {
                 //new InventoryItem(){ UserName = "swn", FirstName="SriCharan" , LastName="Sirpa" , EmailAddress="charanchery9989@gmail.com" , AddressLine = "Shivaji nagar" , Country="India",TotalPrice=350 }
-
+                new InventoryItem
+                {
+                    ImageFile="Shopping Image",
+                    Name = "Shopping Bag",
+                    Summary = "Shopping Summary",
+                    Price = 10.5M,
+                    Category = "Shopping category"
+                }
             };
         }
     }

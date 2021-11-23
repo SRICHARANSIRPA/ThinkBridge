@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using FluentValidation;
 using MediatR;
 using Inventory.Application.Behavior;
+using Inventory.Application.Services;
 
 namespace Inventory.Application
 {
@@ -18,7 +19,7 @@ namespace Inventory.Application
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             services.AddMediatR(Assembly.GetExecutingAssembly());
-
+            services.AddTransient<IInventoryService, InventoryService>();
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(UnhandledExceptionBebaviour<,>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
             return services;
